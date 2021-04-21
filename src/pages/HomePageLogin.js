@@ -1,37 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Button } from 'reactstrap';
+import { Navbar, Button, Nav, NavbarBrand, NavLink, NavbarText, NavItem, } from 'reactstrap';
 const HomePage = ({ isLoggedIn, user, handleLogout }) => {
 
   return (
 
-    // <div className='auth-bar' style={{
-    //   border: '10px solid purple', textAlign: 'center'
-    // }}>
     <Navbar className='auth-bar' >
-      <p>('/')LOG IN TO SAVE Favorites!</p>
-      {
-        user &&
-        <div>
-          Hi {user.username}
-        </div>
-      }
-      {
-        !isLoggedIn
-          ?
+
+      <div>
+
+        <p>('/')LOGIN/SIGNUP TO SAVE FAVORITES!</p>
+        {
+          user &&
           <div>
-            <div>
-              <Link to='/login'>Login</Link>
-            </div>
-            <div>
-              <Link to='/signup'>Signup</Link>
-            </div>
+            ACCOUNT: {user.username}
           </div>
-          :
-          <Button color='danger' onClick={handleLogout}>Logoutttt</Button>
-      }
+        }
+        {
+          !isLoggedIn
+            ?
+            <div>
+
+              <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>
+
+
+              <Button color="primary"><Link style={{ textDecoration: 'none', color: 'white' }} to='/signup'>SIGN UP</Link></Button>
+
+            </div>
+            :
+            <>
+              <Button color='primary'>MY FAVS</Button>&nbsp;&nbsp;
+              <Button color='danger' onClick={handleLogout}>LOGOUT</Button>
+            </>
+        }
+
+      </div>
+
     </Navbar>
-    // </div >
+
   );
 };
 

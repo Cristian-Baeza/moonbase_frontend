@@ -36,32 +36,36 @@ body {
 
 .logo-div {
   display: flex;
-  color:#7d12e0;
-  margin: auto;
-  /* border: 3px solid green; */
+
+  border: 3px solid green;
+
 }
 
 #logo-word {
 
-  border: 3px solid red;
-  margin-right: 10vw;
+ border: 3px solid red;
+  font-size: 2rem !important;
   font-family: 'Righteous';
-  color: green
+  color: rgb(228, 216, 216);
+  margin: auto;
+  text-align: center ;
+  margin-left: 2vw; 
 }
 
 
 /* ############### AUTH BAR ############################ */
+
 .auth-bar{
   /* background-image: url('https://ik.imagekit.io/0jty0e7po/download_3FGN7aXlf.jpg'); */
+  letter-spacing: 0.1rem;
+  
+  border: 3px solid red;
 
-
-  text-align: 'center';
+  /* text-align: 'center';
   font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
   box-shadow: 0 0.5rem 0.5rem black;
-  z-index: 1;
-  
+  z-index: 1; */
 }
 
 /* ############### FOOTER CSS############################ */

@@ -34,7 +34,6 @@ const SignupPage = (props) => {
           <FormGroup>
             <Label for="username">Username</Label>
             <Input type="email" name="username" id="username" placeholder='Anything you want. It can even be dirty' required />
-            <FormFeedback>Oh noes! that name is already taken</FormFeedback>
             <FormText>I recommend your email though</FormText>
           </FormGroup>
           <FormGroup>
@@ -42,7 +41,7 @@ const SignupPage = (props) => {
             <Input type="password" name="password" id="password" placeholder='Even dirtier' required />
           </FormGroup>
           {/* AFTER CLICK REDIRECTS TO /login PAGE */}
-          <Button color="primary">YOU HAVE MY SWORD! (sign up)</Button> &nbsp; OR &nbsp;&nbsp;
+          <Button color="primary">YOU HAVE MY SWORD!</Button> &nbsp; OR &nbsp;&nbsp;
           <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>
 
         </Form>

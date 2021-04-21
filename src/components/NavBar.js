@@ -30,21 +30,24 @@ function NavBar(props) {
             <img src="https://ik.imagekit.io/0jty0e7po/10p-logo_cwXAiI-Ff.png" className="rounded-circle image" alt="10p logo" />
           </motion.div>
 
-          {/* <div id='logo-word'>
-            <h1>MOONBASE</h1>
-          </div> */}
 
         </div>
       </Navbar.Brand>
+
+      <div id='logo-word' className='d-none d-lg-block'>
+        <h1>MOONBASE</h1>
+      </div>
+
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className='ml-auto'>
 
-          <div id='logo-word'>
-            <h1>MOONBASE SLC</h1>
-          </div>
+          {/* <div id='logo-word'>
+            <h1>MOONBASE</h1>
+          </div> */}
+
 
 
           <motion.div whileHover={{ scale: 1.5 }}>
