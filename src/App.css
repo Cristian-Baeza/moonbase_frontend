@@ -1,12 +1,16 @@
+
+
 body {
   font-family: "Open Sans", sans-serif;
 }
 
-.navbar {
+.realnavbar {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  background-color: black;
+  background-image: url('https://ik.imagekit.io/0jty0e7po/48299943216_03191cddb3_o-e1563444620959_L3RqnsQX_.jpg');
+    background-repeat: no-repeat;
+  background-size: cover;
   box-shadow: 0 0.5rem 0.5rem black;
   z-index: 1;
 }
@@ -38,13 +42,27 @@ body {
 }
 
 #logo-word {
-  margin: auto;
-  /* border: 3px solid red; */
-  padding-left: 15px;
+
+  border: 3px solid red;
+  margin-right: 10vw;
+  font-family: 'Righteous';
+  color: green
 }
 
-/* ############### END NAV BAR ############################ */
 
+/* ############### AUTH BAR ############################ */
+.auth-bar{
+  /* background-image: url('https://ik.imagekit.io/0jty0e7po/download_3FGN7aXlf.jpg'); */
+
+
+  text-align: 'center';
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  box-shadow: 0 0.5rem 0.5rem black;
+  z-index: 1;
+  
+}
 
 /* ############### FOOTER CSS############################ */
 
