@@ -7,34 +7,32 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
 
     <Navbar className='auth-bar' >
 
-      <div>
 
-        <p>('/')LOGIN/SIGNUP TO SAVE FAVORITES!</p>
-        {
-          user &&
+
+      <Link>('/')LOGIN/SIGNUP TO SAVE YOUR FAVORITES!</Link>
+      {
+        user &&
+        <Link>
+          ACCOUNT: {user.username}
+        </Link>
+      }
+      {
+        !isLoggedIn
+          ?
           <div>
-            ACCOUNT: {user.username}
+
+            <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>&nbsp; OR &nbsp;&nbsp;
+
+            <Button color="primary"><Link style={{ textDecoration: 'none', color: 'white' }} to='/signup'>SIGN UP</Link></Button>
+
           </div>
-        }
-        {
-          !isLoggedIn
-            ?
-            <div>
+          :
+          <>
+            <Button color='primary'><Link style={{ textDecoration: 'none', color: 'white' }} to='/'>MY FAVS</Link></Button>
+            <Button color='danger' onClick={handleLogout}>LOGOUT</Button>
+          </>
+      }
 
-              <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>
-
-
-              <Button color="primary"><Link style={{ textDecoration: 'none', color: 'white' }} to='/signup'>SIGN UP</Link></Button>
-
-            </div>
-            :
-            <>
-              <Button color='primary'>MY FAVS</Button>&nbsp;&nbsp;
-              <Button color='danger' onClick={handleLogout}>LOGOUT</Button>
-            </>
-        }
-
-      </div>
 
     </Navbar>
 

@@ -13,7 +13,10 @@ body {
   background-size: cover;
   box-shadow: 0 0.5rem 0.5rem black;
   z-index: 1;
+  font-family: 'Press Start 2P', cursive;
+
 }
+
 
 .navbar-toggler {
   background-color: rgb(117, 14, 165) !important;
@@ -45,7 +48,8 @@ body {
 
  border: 3px solid red;
   font-size: 2rem !important;
-  font-family: 'Righteous';
+  /* font-family: 'Righteous'; */
+  font-family: 'Press Start 2P', cursive;
   color: rgb(228, 216, 216);
   margin: auto;
   text-align: center ;
