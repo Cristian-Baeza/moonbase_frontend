@@ -28,7 +28,7 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
           </div>
           :
           <>
-            <Button color='primary'><Link style={{ textDecoration: 'none', color: 'white' }} to='/'>MY FAVS</Link></Button>
+            <Button color='primary'><Link style={{ textDecoration: 'none', color: 'white' }} to='/favorites'>MY FAVS</Link></Button>
             <Button color='danger' onClick={handleLogout}>LOGOUT</Button>
           </>
       }

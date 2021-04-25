@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import HomePageLogin from './pages/HomePageLogin';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import Favorites from './components/Favorites';
 import { getLoggedInUser, login } from './api/UserAPI';
 
 
@@ -17,6 +18,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [videoInfo, setVideoInfo] = useState([])
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     const getUser = async () => {
@@ -68,12 +70,30 @@ function App() {
     )
   }
 
-  const renderHomePage = () => {
+  const renderHomePageLogin = () => {
     return (
       <HomePageLogin
         isLoggedIn={isLoggedIn}
         user={user}
         handleLogout={handleLogout}
+      />
+    )
+  }
+
+  const renderHomePage = () => {
+    return (
+      <HomePage
+        videoInfo={videoInfo}
+        setVideoInfo={setVideoInfo}
+        setFavorites={setFavorites}
+        favorites={favorites}
+      />
+    )
+  }
+  const renderFavorites = () => {
+    return (
+      <Favorites
+        favorites={favorites}
       />
     )
   }
@@ -84,14 +104,11 @@ function App() {
       <Router>
         <NavBar />
         <div>
+          <Route exact path="/" render={renderHomePageLogin} />
           <Route exact path="/" render={renderHomePage} />
           <Route exact path="/login" render={renderLoginPage} />
           <Route exact path="/signup" component={SignupPage} />
-          <HomePage
-            videoInfo={videoInfo}
-            setVideoInfo={setVideoInfo}
-          />
-
+          <Route exact path='/favorites' render={Favorites} />
         </div>
         <Footer />
       </Router>

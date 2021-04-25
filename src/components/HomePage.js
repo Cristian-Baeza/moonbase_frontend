@@ -36,30 +36,22 @@ function HomePage(props) {
   }, [])
 
 
+  const addToFavorite = (each) => {
 
-  // const mapVideos = (array) => {
-  //   return (
-  //     array.map((each, index) => {
-  //       return (
-  //         <div style={{ border: '4px solid black' }}>
-  //           <h1>{each.name}</h1>
+    let vidInfo = {
+      uri: each.uri,
+      name: each.name,
+      description: each.description
+    };
 
-  //           <iframe key={index} title='yes' src={`https://player.vimeo.com/video/${each.uri}?loop=1&byline=0&portrait=0`} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen>
-  //           </iframe>
-  //           <p>{each.description}</p>
 
-  //           <script src="https://player.vimeo.com/api/player.js"></script>
-  //         </div>
-  //       )
-  //     })
-  //   )
-  // }
-  // <div style="padding:56.25% 0 0 0;position:relative;">
-  // style="position:absolute;top:0;left:0;width:100%;height:100%;"
+    props.setFavorites(favorites => [...props.favorites, vidInfo])
+    // console.log(vidInfo)
+  }
 
-  // console.log(props.videoInfo[0].pictures.sizes)
 
-  const mapVideos2 = (array) => {
+
+  const mapVideos = (array) => {
     return (
       array.map((each, index) => {
         return (
@@ -71,7 +63,9 @@ function HomePage(props) {
             <div className="card-body">
               <h5 className="card-title">{each.name}</h5>
               <p className="card-text">{each.description}.</p>
-              <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>
+              <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
+              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to Favs</button>
+              <button className='btn btn-danger' onClick={() => console.log(props.favorites)} >log favs</button>
             </div>
           </div>
         )
@@ -88,7 +82,7 @@ function HomePage(props) {
     }}>
 
       <div className='card-deck card-div'>
-        {mapVideos2(props.videoInfo)}
+        {mapVideos(props.videoInfo)}
       </div>
 
     </div>
