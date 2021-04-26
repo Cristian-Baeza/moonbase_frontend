@@ -1,12 +1,3 @@
-const login = (userObject) => {
-  return fetch('http://localhost:8000/token-auth/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userObject)
-  }).then(res => res)
-};
 
 const getLoggedInUser = (token) => {
   return fetch('http://localhost:8000/core/current_user/', {
@@ -46,8 +37,29 @@ const fetchFavorites = async (token) => {
   }
 }
 
+const login = (userObject) => {
+  return fetch('http://localhost:8000/token-auth/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userObject)
+  }).then(res => res)
+};
 
 
 //post favorites to account http://localhost:8000/core/favorites/
+const addToFavoritesDb = async (token, videoObject) => {
+  return fetch('http://localhost:8000/core/favorites/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `JWT ${token}`
+    },
+    body: JSON.stringify(videoObject)
+  }).then(res => res)
+};
 
-export { login, getLoggedInUser, signupUser, fetchFavorites }
+
+
+export { login, getLoggedInUser, signupUser, fetchFavorites, addToFavoritesDb }

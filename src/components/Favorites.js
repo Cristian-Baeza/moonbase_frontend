@@ -6,8 +6,8 @@ function Favorites(props) {
 
 
   const getFavoriteVideos = async () => {
-    let response = await fetchFavorites();
-    console.log(response)
+    let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
+    console.log(userInfo)
   }
 
 

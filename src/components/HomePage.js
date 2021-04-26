@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { fetchVideos } from '../api/VideoApi';
-import { fetchFavorites } from '../api/UserAPI';
+import { fetchFavorites, addToFavoritesDb } from '../api/UserAPI';
 
 
 
@@ -37,27 +37,32 @@ function HomePage(props) {
   }, [])
 
 
+  // func that posts to favorites in DB 
+  const addToFavorite = async (each) => {
+    let vidUri = each.uri;
+    let vidName = each.name;
+    let vidDescription = each.description;
+
+    let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
+    let userId = userInfo.id
 
 
-  // this func add the video info to STATE not to the account DB !!
-  const addToFavorite = (each) => {
-    let vidInfo = {
-      uri: each.uri,
-      name: each.name,
-      description: each.description
-    };
-    props.setFavorites(favorites => [...props.favorites, vidInfo])
-    // console.log(vidInfo)
+    let videoObject = {
+      "user": userId,
+      "uri": vidUri,
+      "name": vidName,
+      "description": vidDescription
+    }
+
+    let userToken = localStorage.getItem("auth-user")
+
+    addToFavoritesDb(userToken, videoObject)
   }
-  ////////////////
-
-  // need a func that posts to favorites in DB 
-
 
 
   const getFavoriteVideos = async () => {
-    let response = await fetchFavorites(localStorage.getItem("auth-user"));
-    console.log(response)
+    let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
+    console.log(userInfo)
   }
 
   const mapVideos = (array) => {
@@ -74,7 +79,7 @@ function HomePage(props) {
               <p className="card-text">{each.description}.</p>
               <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
 
-              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to Favs</button>&nbsp;&nbsp;
+              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>&nbsp;&nbsp;
 
               <button onClick={getFavoriteVideos}>Log favs on account in db</button>
 
