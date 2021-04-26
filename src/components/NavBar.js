@@ -8,7 +8,7 @@ function NavBar(props) {
   return (
     <Navbar className='realnavbar' collapseOnSelect expand="md" variant="dark">
 
-      <Navbar.Brand className="mr-auto" href="#">
+      <Navbar.Brand className="mr-auto" href="/">
         <div className='logo-div'>
 
           {/* ANIMATION FOR LOGO */}

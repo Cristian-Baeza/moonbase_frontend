@@ -60,10 +60,10 @@ function HomePage(props) {
   }
 
 
-  const getFavoriteVideos = async () => {
-    let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
-    console.log(userInfo)
-  }
+  // const getFavoriteVideos = async () => {
+  //   let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
+  //   console.log(userInfo)
+  // }
 
   const mapVideos = (array) => {
     return (
@@ -81,7 +81,7 @@ function HomePage(props) {
 
               <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>&nbsp;&nbsp;
 
-              <button onClick={getFavoriteVideos}>Log favs on account in db</button>
+              {/* <button onClick={getFavoriteVideos}>Log favs on account in db</button> */}
 
             </div>
           </div>

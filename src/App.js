@@ -90,13 +90,7 @@ function App() {
       />
     )
   }
-  const renderFavorites = () => {
-    return (
-      <Favorites
-        favorites={favorites}
-      />
-    )
-  }
+
 
 
   return (
@@ -108,7 +102,7 @@ function App() {
           <Route exact path="/" render={renderHomePage} />
           <Route exact path="/login" render={renderLoginPage} />
           <Route exact path="/signup" component={SignupPage} />
-          <Route exact path='/favorites' render={Favorites} />
+          <Route exact path='/favorites' component={Favorites} />
         </div>
         <Footer />
       </Router>
