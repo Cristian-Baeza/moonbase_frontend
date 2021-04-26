@@ -23,20 +23,22 @@ const Login = ({ isLoggedIn, handleLogout, handleLogin }) => {
       </div> */}
 
 
-      <div style={{ padding: '20px' }}>
-        <h3> Login </h3>
-        <Form onSubmit={handleLogin}>
-          <FormGroup>
-            <Label for="username">Username</Label>
-            <Input type="text" name="username" id="username" required />
-          </FormGroup>
-          <FormGroup>
-            <Label for="password">Password</Label>
-            <Input type="password" name="password" id="password" required />
-          </FormGroup>
-          <Button color="primary">BLASTOFF!</Button> &nbsp; OR &nbsp;&nbsp;
+      <div className="login-page" style={{ padding: '20px' }}>
+        <div className="login-form">
+          <h3> Login </h3>
+          <Form onSubmit={handleLogin}>
+            <FormGroup>
+              <Label for="username">Username</Label>
+              <Input type="text" name="username" id="username" required />
+            </FormGroup>
+            <FormGroup>
+              <Label for="password">Password</Label>
+              <Input type="password" name="password" id="password" required />
+            </FormGroup>
+            &nbsp;&nbsp;<Button color="primary">BLASTOFF!</Button> &nbsp; OR &nbsp;&nbsp;
           <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/signup'>REGISTER</Link></Button>
-        </Form>
+          </Form>
+        </div>
       </div>
 
 

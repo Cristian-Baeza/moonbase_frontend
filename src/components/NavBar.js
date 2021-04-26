@@ -35,7 +35,8 @@ function NavBar(props) {
       </Navbar.Brand>
 
       <div id='logo-word' className='d-none d-lg-block'>
-        <h1>MOONBASE</h1>
+        <h1>MOONBASE </h1>
+        {/* <h1 id='slc'>SLC</h1> */}
       </div>
 
 
@@ -43,12 +44,6 @@ function NavBar(props) {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className='ml-auto'>
-
-          {/* <div id='logo-word'>
-            <h1>MOONBASE</h1>
-          </div> */}
-
-
 
           <motion.div whileHover={{ scale: 1.5 }}>
             <LinkContainer to="/">
@@ -59,15 +54,13 @@ function NavBar(props) {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.5 }} >
-            <Nav.Link className='nav-link' href="#">
-              DA FEED
+            <Nav.Link className='nav-link' href="/feed">
+              FEED
             </Nav.Link>
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.5 }}>
-            <Nav.Link className='nav-link' href="#">
-              LINK
-            </Nav.Link>
+            <a className='nav-link' target="_blank" href="https://10thplanetsaltlakecity.com">GYM</a>
           </motion.div>
 
 

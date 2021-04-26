@@ -24,27 +24,25 @@ const SignupPage = (props) => {
   return (
     <div>
 
-      <div>
-        <Link to='/'>Home</Link>
-      </div>
-
-      <div style={{ padding: '20px' }}>
-        <h3> REGISTER MOONHEAD </h3>
-        <Form onSubmit={handleSignup}>
-          <FormGroup>
-            <Label for="username">Username</Label>
-            <Input type="email" name="username" id="username" placeholder='Anything you want. It can even be dirty' required />
-            <FormText>I recommend your email though</FormText>
-          </FormGroup>
-          <FormGroup>
-            <Label for="password">Password</Label>
-            <Input type="password" name="password" id="password" placeholder='Even dirtier' required />
-          </FormGroup>
-          {/* AFTER CLICK REDIRECTS TO /login PAGE */}
-          <Button color="primary">YOU HAVE MY SWORD!</Button> &nbsp; OR &nbsp;&nbsp;
+      <div className='signup-page' style={{ padding: '20px' }}>
+        <div className='signup-form'>
+          <h3> REGISTER MOONHEAD </h3>
+          <Form onSubmit={handleSignup}>
+            <FormGroup>
+              <Label for="username">Username</Label>
+              <Input type="email" name="username" id="username" required />
+              <FormText>Must be an email foo</FormText>
+            </FormGroup>
+            <FormGroup>
+              <Label for="password">Password</Label>
+              <Input type="password" name="password" id="password" placeholder='Even dirtier' required />
+            </FormGroup>
+            {/* AFTER CLICK REDIRECTS TO /login PAGE */}
+            <Button color="primary">YOU HAVE MY SWORD!</Button> &nbsp; OR &nbsp;&nbsp;
           <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>
 
-        </Form>
+          </Form>
+        </div>
       </div>
 
 

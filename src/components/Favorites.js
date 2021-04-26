@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchFavorites, deleteFavorite } from '../api/UserAPI';
+import { CardGroup, Card } from 'react-bootstrap';
+
 
 
 function Favorites(props) {
@@ -33,20 +35,19 @@ function Favorites(props) {
     return (
       array.map((each, index) => {
         return (
-          <div className="card" style={{ border: '4px solid black' }}>
+          <Card className='card' style={{ border: '4px solid black' }}>
+            <Card.Img src={each.image} alt="Card" />
+            <Card.Body>
+              {/* <img width='370' height='209' sizes='(max-width:370px) 100vw, 370px' className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" /> */}
 
-            <img width='20%' height='209' sizes='(max-width:100px)' className="card-img-top" src={each.image} alt="Card" />
-
-
-            <div className="card-body">
-              <h5 className="card-title">{each.name}</h5>
-              <p className="card-text">{each.description}.</p>
+              <Card.Title>{each.name}</Card.Title>
+              <Card.Text>{each.description}.</Card.Text>
               <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
 
               <button className='btn btn-danger' onClick={() => removeFavorite(each)}>Remove from favs</button>&nbsp;&nbsp;
 
-            </div>
-          </div>
+            </Card.Body>
+          </Card>
         )
       })
     )
@@ -55,14 +56,12 @@ function Favorites(props) {
 
 
   return (
-    <div>
-      <h1>favs page!</h1>
-      {/* <button onClick={getFavoriteVideos}>Log favs on account in db</button> */}
-
-      <div className='card-deck card-div'>
+    <>
+      <h1>FAVORITES</h1>
+      <CardGroup className='homepage'>
         {mapVideos(favorites)}
-      </div>
-    </div>
+      </CardGroup>
+    </>
   );
 }
 

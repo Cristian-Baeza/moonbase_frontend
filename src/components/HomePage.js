@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchVideos } from '../api/VideoApi';
 import { fetchFavorites, addToFavoritesDb } from '../api/UserAPI';
-
+import { CardGroup, Card } from 'react-bootstrap';
 
 
 
@@ -62,48 +62,38 @@ function HomePage(props) {
   }
 
 
+  // will try with react boostrap
   const mapVideos = (array) => {
     return (
       array.map((each, index) => {
         return (
-          <div className='col' style={{ border: '4px solid black' }}>
+          <Card className='card' style={{ border: '4px solid black' }}>
+            <Card.Img src={each.pictures.sizes[2].link} alt="Card" />
+            <Card.Body>
+              {/* <img width='370' height='209' sizes='(max-width:370px) 100vw, 370px' className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" /> */}
 
-            <img src={each.pictures.sizes[2].link} alt="Card" />
-            {/* <img width='370' height='209' sizes='(max-width:370px) 100vw, 370px' className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" /> */}
+              <Card.Title>{each.name}</Card.Title>
+              <Card.Text>{each.description}.</Card.Text>
+              <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
 
+                <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>
 
-
-            <h5>{each.name}</h5>
-            <p >{each.description}.</p>
-            <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
-
-            <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>
-
-
-          </div>
+            </Card.Body>
+          </Card>
         )
       })
     )
   }
 
   return (
-    <>
-      {/* <SideNav /> */}
-      <div class="sidenav">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-      </div>
+    <div className="homepage">
+      <CardGroup>
 
-      <div className='container main'>
-        <div className='row'>
-          {mapVideos(props.videoInfo)}
-        </div>
-      </div>
+        {mapVideos(props.videoInfo)}
 
 
-    </>
+      </CardGroup>
+    </div>
   );
 }
 
