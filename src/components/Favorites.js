@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchFavorites } from '../api/UserAPI';
+import { fetchFavorites, deleteFavorite } from '../api/UserAPI';
 
 
 function Favorites(props) {
@@ -9,7 +9,7 @@ function Favorites(props) {
 
   const getFavoriteVideos = async () => {
     let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
-    console.log(userInfo)
+    // console.log(userInfo)
     console.log(userInfo.favorites)
     setFavorites(userInfo.favorites)
   }
@@ -17,6 +17,15 @@ function Favorites(props) {
   useEffect(() => {
     getFavoriteVideos()
   }, [])
+
+
+  const removeFavorite = (each) => {
+    console.log(each.id)
+    let userToken = localStorage.getItem("auth-user")
+    // console.log(userToken)
+    deleteFavorite(userToken, each.id);
+    window.location.reload();
+  }
 
 
   // EDIT MAPPING ON HOMEPAGE THEN COPY OVER HERE
@@ -34,7 +43,7 @@ function Favorites(props) {
               <p className="card-text">{each.description}.</p>
               <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
 
-              <button className='btn btn-danger'>Remove from favs</button>&nbsp;&nbsp;
+              <button className='btn btn-danger' onClick={() => removeFavorite(each)}>Remove from favs</button>&nbsp;&nbsp;
 
             </div>
           </div>

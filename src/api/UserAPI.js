@@ -75,4 +75,4 @@ const deleteFavorite = async (token, favoriteId) => {
 
 
 
-export { login, getLoggedInUser, signupUser, fetchFavorites, addToFavoritesDb }
+export { login, getLoggedInUser, signupUser, fetchFavorites, addToFavoritesDb, deleteFavorite }
