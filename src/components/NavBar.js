@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { motion } from "framer-motion";
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from 'react-router-dom';
+
 
 function NavBar(props) {
   return (
@@ -60,7 +60,7 @@ function NavBar(props) {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.5 }}>
-            <a className='nav-link' target="_blank" href="https://10thplanetsaltlakecity.com">GYM</a>
+            <a className='nav-link' target="_blank" href="https://10thplanetsaltlakecity.com" rel="noreferrer">GYM</a>
           </motion.div>
 
 

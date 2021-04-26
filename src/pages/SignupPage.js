@@ -1,7 +1,7 @@
 import React from 'react';
 import { signupUser } from '../api/UserAPI';
 import { Link } from 'react-router-dom';
-import { Button, Form, FormGroup, Input, Label, FormFeedback, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Input, Label, FormText } from 'reactstrap';
 
 const SignupPage = (props) => {
   const { history } = props;
@@ -35,7 +35,7 @@ const SignupPage = (props) => {
             </FormGroup>
             <FormGroup>
               <Label for="password">Password</Label>
-              <Input type="password" name="password" id="password" placeholder='Even dirtier' required />
+              <Input type="password" name="password" id="password" required />
             </FormGroup>
             {/* AFTER CLICK REDIRECTS TO /login PAGE */}
             <Button color="primary">YOU HAVE MY SWORD!</Button> &nbsp; OR &nbsp;&nbsp;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Button, Nav, NavbarBrand, NavLink, NavbarText, NavItem, } from 'reactstrap';
+import { Navbar, Button } from 'reactstrap';
 const HomePage = ({ isLoggedIn, user, handleLogout }) => {
 
   return (
@@ -9,10 +9,9 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
 
 
 
-      <Link>('/')LOGIN/SIGNUP TO SAVE YOUR FAVORITES!</Link>
       {
         user &&
-        <Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }}>
           ACCOUNT: {user.username}
         </Link>
       }
@@ -20,21 +19,23 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
         !isLoggedIn
           ?
           <div>
+            <h1>LOGIN TO SAVE YOUR FAVORITES!</h1>
 
-            <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>&nbsp; OR &nbsp;&nbsp;
+            <div>
+              <Button color="success"><Link style={{ textDecoration: 'none', color: 'white' }} to='/login'>LOGIN</Link></Button>&nbsp; OR &nbsp;
 
             <Button color="primary"><Link style={{ textDecoration: 'none', color: 'white' }} to='/signup'>SIGN UP</Link></Button>
-
+            </div>
           </div>
           :
-          <>
-            <Button color='primary'><Link style={{ textDecoration: 'none', color: 'white' }} to='/favorites'>MY FAVS</Link></Button>
+          <div>
+            <Button color='primary'><Link style={{ textDecoration: 'none', color: 'white' }} to='/favorites'>MY FAVS</Link></Button>&nbsp; OR &nbsp;
             <Button color='danger' onClick={handleLogout}>LOGOUT</Button>
-          </>
+          </div>
       }
 
 
-    </Navbar>
+    </Navbar >
 
   );
 };

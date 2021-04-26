@@ -57,10 +57,12 @@ function Favorites(props) {
 
   return (
     <>
-      <h1>FAVORITES</h1>
-      <CardGroup className='homepage'>
-        {mapVideos(favorites)}
-      </CardGroup>
+      <h1 className='favorites-title'>FAVORITES</h1>
+      <div className='homepage favoritepage'>
+        <CardGroup >
+          {mapVideos(favorites)}
+        </CardGroup>
+      </div>
     </>
   );
 }

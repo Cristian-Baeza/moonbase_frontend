@@ -59,16 +59,16 @@ body {
 /* ############### AUTH BAR ############################ */
 
 .auth-bar{
-  /* background-image: url('https://ik.imagekit.io/0jty0e7po/download_3FGN7aXlf.jpg'); */
-  letter-spacing: 0.1rem;
-  
-  border: 3px solid red;
+  background-image: url('https://ik.imagekit.io/0jty0e7po/download_3FGN7aXlf.jpg');
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  box-shadow: 0 0.5rem 0.5rem rgb(117, 9, 167);
+  z-index: 1;
+}
 
-  /* text-align: 'center';
-  font-size: 1.5rem;
-  font-weight: 600;
-  box-shadow: 0 0.5rem 0.5rem black;
-  z-index: 1; */
+.auth-bar h1 {
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 /* ############### FOOTER CSS############################ */
@@ -147,7 +147,7 @@ body {
   padding-top: 10px;;
 }
 
-/* ############### HOME PAGE CSS########### */
+/* ############### HOME PAGE/favortiesCSS########### */
 
 .homepage {
   background-image: url('https://ik.imagekit.io/0jty0e7po/unicorn-silhouette-set-in-a-nebula-cloud-in-space_17ROgVAcg.webp');
@@ -163,6 +163,8 @@ body {
   margin: 50px;
   height: 40vh;
   /* padding-bottom: 2vh !important; */
+  
+
 
 }
 
@@ -174,6 +176,23 @@ body {
 .card-body {
   text-align: center;
 }
+
+.favoritepage{
+  background-image: url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp');
+  height: 100vh;
+}
+.favorites-title {
+
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  box-shadow: 0 0.8rem 0.8rem rgb(47, 8, 65);
+  z-index: 1;
+  padding-top: 10px;
+  text-align: center;
+  background-color: rgb(12, 11, 11)
+
+}
+
 
 /* ############### FEED CSS############################ */
 
