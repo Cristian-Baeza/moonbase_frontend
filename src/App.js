@@ -9,6 +9,7 @@ import HomePageLogin from './pages/HomePageLogin';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Favorites from './components/Favorites';
+//API
 import { getLoggedInUser, login } from './api/UserAPI';
 
 
@@ -97,14 +98,14 @@ function App() {
     <div>
       <Router>
         <NavBar />
-        <div>
-          <Route exact path="/" render={renderHomePageLogin} />
-          <Route exact path="/" render={renderHomePage} />
-          <Route exact path="/login" render={renderLoginPage} />
-          <Route exact path="/signup" component={SignupPage} />
-          <Route exact path='/favorites' component={Favorites} />
-        </div>
-        <Footer />
+        {/* <div> */}
+        <Route exact path="/" render={renderHomePageLogin} />
+        <Route exact path="/" render={renderHomePage} />
+        <Route exact path="/login" render={renderLoginPage} />
+        <Route exact path="/signup" component={SignupPage} />
+        <Route exact path='/favorites' component={Favorites} />
+        {/* </div> */}
+        {/* <Footer /> */}
       </Router>
     </div>
   );

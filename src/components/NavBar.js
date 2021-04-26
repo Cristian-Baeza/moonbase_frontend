@@ -53,7 +53,7 @@ function NavBar(props) {
           <motion.div whileHover={{ scale: 1.5 }}>
             <LinkContainer to="/">
               <Nav.Link className='nav-link'>
-                BASECAMPp
+                BASECAMP
             </Nav.Link>
             </LinkContainer>
           </motion.div>

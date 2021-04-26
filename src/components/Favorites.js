@@ -18,6 +18,8 @@ function Favorites(props) {
     getFavoriteVideos()
   }, [])
 
+
+  // EDIT MAPPING ON HOMEPAGE THEN COPY OVER HERE
   const mapVideos = (array) => {
     return (
       array.map((each, index) => {

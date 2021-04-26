@@ -4,6 +4,7 @@ import { fetchFavorites, addToFavoritesDb } from '../api/UserAPI';
 
 
 
+
 function HomePage(props) {
   // Currently passing the props: 
   // props.videoInfo == array of objects with video info
@@ -47,7 +48,6 @@ function HomePage(props) {
     let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
     let userId = userInfo.id
 
-
     let videoObject = {
       "user": userId,
       "uri": vidUri,
@@ -66,20 +66,21 @@ function HomePage(props) {
     return (
       array.map((each, index) => {
         return (
-          <div className="card" style={{ border: '4px solid black' }}>
+          <div className="col-sm-2">
+            <div className="card" style={{ border: '4px solid black' }}>
 
-            <img width='370' height='209' sizes='(max-width:370px) 100vw, 370px' className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" />
+              <img className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" />
+              {/* <img width='370' height='209' sizes='(max-width:370px) 100vw, 370px' className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" /> */}
 
 
-            <div className="card-body">
-              <h5 className="card-title">{each.name}</h5>
-              <p className="card-text">{each.description}.</p>
-              <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
+              <div className="card-body">
+                <h5 className="card-title">{each.name}</h5>
+                <p className="card-text">{each.description}.</p>
+                <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
 
-              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>&nbsp;&nbsp;
+              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>
 
-              <button onClick={() => console.log(each.pictures.sizes[2].link, each.name)}>Log vid info</button>
-
+              </div>
             </div>
           </div>
         )
@@ -88,18 +89,21 @@ function HomePage(props) {
   }
 
   return (
-    <div style={{
-      backgroundImage: `url("https://ik.imagekit.io/0jty0e7po/church_state_inside_g9VA_VbW7L.jpg")`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
-    }}>
+    <>
+      {/* <SideNav /> */}
+      <div class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
 
-      <div className='card-deck card-div'>
+      <div className='card-deck'>
         {mapVideos(props.videoInfo)}
       </div>
 
-    </div>
+
+    </>
   );
 }
 
