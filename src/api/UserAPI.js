@@ -61,5 +61,18 @@ const addToFavoritesDb = async (token, videoObject) => {
 };
 
 
+//delete favorite from account http://localhost:8000/core/favorites/
+const deleteFavorite = async (token, favoriteId) => {
+  return fetch(`http://localhost:8000/core/favorites/${favoriteId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `JWT ${token}`
+    },
+  }).then(res => res)
+};
+
+
+
 
 export { login, getLoggedInUser, signupUser, fetchFavorites, addToFavoritesDb }
