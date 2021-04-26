@@ -42,6 +42,7 @@ function HomePage(props) {
     let vidUri = each.uri;
     let vidName = each.name;
     let vidDescription = each.description;
+    let vidImage = each.pictures.sizes[2].link
 
     let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
     let userId = userInfo.id
@@ -51,7 +52,8 @@ function HomePage(props) {
       "user": userId,
       "uri": vidUri,
       "name": vidName,
-      "description": vidDescription
+      "description": vidDescription,
+      "image": vidImage
     }
 
     let userToken = localStorage.getItem("auth-user")
@@ -59,11 +61,6 @@ function HomePage(props) {
     addToFavoritesDb(userToken, videoObject)
   }
 
-
-  // const getFavoriteVideos = async () => {
-  //   let userInfo = await fetchFavorites(localStorage.getItem("auth-user"));
-  //   console.log(userInfo)
-  // }
 
   const mapVideos = (array) => {
     return (
@@ -81,7 +78,7 @@ function HomePage(props) {
 
               <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>&nbsp;&nbsp;
 
-              {/* <button onClick={getFavoriteVideos}>Log favs on account in db</button> */}
+              <button onClick={() => console.log(each.pictures.sizes[2].link, each.name)}>Log vid info</button>
 
             </div>
           </div>
