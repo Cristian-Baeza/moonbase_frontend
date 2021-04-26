@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { fetchVideos } from '../api/VideoApi';
+import { fetchFavorites } from '../api/UserAPI';
 
 
 
@@ -36,20 +37,28 @@ function HomePage(props) {
   }, [])
 
 
-  const addToFavorite = (each) => {
 
+
+  // this func add the video info to STATE not to the account DB !!
+  const addToFavorite = (each) => {
     let vidInfo = {
       uri: each.uri,
       name: each.name,
       description: each.description
     };
-
-
     props.setFavorites(favorites => [...props.favorites, vidInfo])
     // console.log(vidInfo)
   }
+  ////////////////
+
+  // need a func that posts to favorites in DB 
 
 
+
+  const getFavoriteVideos = async () => {
+    let response = await fetchFavorites(localStorage.getItem("auth-user"));
+    console.log(response)
+  }
 
   const mapVideos = (array) => {
     return (
@@ -64,8 +73,11 @@ function HomePage(props) {
               <h5 className="card-title">{each.name}</h5>
               <p className="card-text">{each.description}.</p>
               <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
-              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to Favs</button>
-              <button className='btn btn-danger' onClick={() => console.log(props.favorites)} >log favs</button>
+
+              <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to Favs</button>&nbsp;&nbsp;
+
+              <button onClick={getFavoriteVideos}>Log favs on account in db</button>
+
             </div>
           </div>
         )
