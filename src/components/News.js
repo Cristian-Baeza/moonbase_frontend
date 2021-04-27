@@ -39,10 +39,11 @@ function News(props) {
     return (
       array.map((each, index) => {
         return (
-          <div>
-            <h1><a href={each.url} target='_blank' rel='noreferrer'>{each.title}</a></h1>
-            <p>{each.description}</p>
-            <img src={each.urlToImage} alt="" />
+          <div className='news-card'>
+            <h1><a style={{ textDecoration: 'underline' }} href={each.url} target='_blank' rel='noreferrer'>{each.title}</a></h1>
+
+            <p><img src={each.urlToImage} alt="" />{each.description}</p>
+
           </div>
         )
       })
@@ -51,7 +52,9 @@ function News(props) {
 
   return (
     <div className='news-page'>
-      <h1>NEWS</h1>
+      <div className='news-page-header'>
+        <h1>MOST RECENT FIGHT NEWS</h1>
+      </div>
       {mapArticles(articles)}
     </div>
   );

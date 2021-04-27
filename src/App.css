@@ -195,12 +195,61 @@ body {
 
 /* ############### NEWS CSS############################ */
 
+.news-page-header {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  padding-top: 30px;
+  color: white;
+  box-shadow: 0 0.8rem 0.8rem rgb(47, 8, 65);
+  z-index: 1;
+  padding-top: 10px;
+  text-align: center;
+  background-color: rgb(12, 11, 11)
+}
+
+
 .news-page {
   background-image: url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp');
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 }
 
+.news-card {
+  background-color: rgb(104, 1, 163);
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  border: 6px solid black;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  height: auto;
+
+}
+
+
+.news-card p{
+  color: rgb(7, 7, 7);
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.news-card a {
+  color: rgb(255, 255, 255);
+  font-size: 1.5vw !important;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+}
+
+.news-card img {
+  /* width: 100%; */
+  max-width: 400px;
+  /* height: auto; */
+  max-height: 150px;
+  float: left;
+  padding-right: 6px;
+}
 
 /* ############### FEED CSS############################ */
 
