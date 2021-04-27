@@ -59,6 +59,12 @@ function NavBar(props) {
             </Nav.Link>
           </motion.div>
 
+          <motion.div whileHover={{ scale: 1.5 }} >
+            <Nav.Link className='nav-link' href="/news">
+              NEWS
+            </Nav.Link>
+          </motion.div>
+
           <motion.div whileHover={{ scale: 1.5 }}>
             <a className='nav-link' target="_blank" href="https://10thplanetsaltlakecity.com" rel="noreferrer">GYM</a>
           </motion.div>

@@ -193,6 +193,14 @@ body {
 
 }
 
+/* ############### NEWS CSS############################ */
+
+.news-page {
+  background-image: url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp');
+  background-size: cover;
+  height: 100vh;
+}
+
 
 /* ############### FEED CSS############################ */
 

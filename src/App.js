@@ -8,7 +8,8 @@ import HomePageLogin from './pages/HomePageLogin';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Favorites from './components/Favorites';
-import Feed from './components/Feed'
+import Feed from './components/Feed';
+import News from './components/News';
 //API
 import { getLoggedInUser, login } from './api/UserAPI';
 
@@ -105,6 +106,7 @@ function App() {
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path='/favorites' component={Favorites} />
         <Route exact path='/feed' component={Feed} />
+        <Route exact path='/news' component={News} />
         {/* </div> */}
         {/* <Footer /> */}
       </Router>
