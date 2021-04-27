@@ -34,10 +34,24 @@ function NavBar(props) {
         </div>
       </Navbar.Brand>
 
-      <div id='logo-word' className='d-none d-lg-block'>
-        <h1>MOONBASE </h1>
-        {/* <h1 id='slc'>SLC</h1> */}
-      </div>
+      <motion.div animate={{
+        x: 100,
+        y: 0,
+      }}
+        transition={{
+          duration: 10,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.5, 0.8, 1],
+          loop: Infinity,
+          repeatDelay: 1
+        }} >
+        <div id='logo-word' className='d-none d-lg-block'>
+          <h1>
+            <img style={{ paddingBottom: '10px', borderRadius: '25px' }} width="100" height="80" src="https://ik.imagekit.io/0jty0e7po/Screen_Shot_2021-04-27_at_1.22.33_PM_I_7p379Md.png" alt="" />MOONBASE<img style={{ paddingBottom: '10px', borderRadius: '25px' }} width="90" height="50" src="https://ik.imagekit.io/0jty0e7po/Screen_Shot_2021-04-27_at_1.36.18_PM_qGOSPqx6_.png" alt="" />
+          </h1>
+          {/* <h1 id='slc'>SLC</h1> */}
+        </div>
+      </motion.div>
 
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
