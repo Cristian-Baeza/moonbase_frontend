@@ -206,9 +206,15 @@ body {
 
 
 .news-page {
-  background-image: url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp');
+  /* background-image: url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp');
   background-size: cover;
-  height: 100%;
+  height: 100%; */
+  background-attachment: fixed;
+  background: url(./images/stars-1.png) repeat-x fixed -130%,
+  url(./images/stars-2.png) repeat-x 40% 0,
+  url(./images/space-bg.png) repeat-x fixed -80% 0,
+  url(./images/clouds.png) repeat-x fixed 100%;
+    background-color: #1a1a1a;
 }
 
 .news-card {

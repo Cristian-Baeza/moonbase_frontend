@@ -34,12 +34,16 @@ function NavBar(props) {
 
 
 
-      <motion.div animate={{
-        x: 100,
-        y: 0,
-      }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{
+          opacity: 1,
+          x: 300,
+          y: 0,
+          scale: 1.2
+        }}
         transition={{
-          duration: 10,
+          duration: 8,
           ease: "easeInOut",
           times: [0, 0.2, 0.5, 0.8, 1],
           loop: Infinity,
