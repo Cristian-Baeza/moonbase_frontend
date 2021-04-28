@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { fetchVideos } from '../api/VideoApi';
 import { fetchFavorites, addToFavoritesDb } from '../api/UserAPI';
 import { CardGroup, Card } from 'react-bootstrap';
-
+import Footer from './Footer';
 
 
 function HomePage(props) {
@@ -56,9 +56,10 @@ function HomePage(props) {
       "image": vidImage
     }
 
-    let userToken = localStorage.getItem("auth-user")
+    let userToken = localStorage.getItem("auth-user");
 
-    addToFavoritesDb(userToken, videoObject)
+    addToFavoritesDb(userToken, videoObject);
+    alert('Added to your favorites!')
   }
 
 
@@ -76,7 +77,7 @@ function HomePage(props) {
               <Card.Text>{each.description}.</Card.Text>
               <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;
 
-                <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!!</button>
+                <button className='btn btn-danger' onClick={() => addToFavorite(each)} >Add to favs!</button>
 
             </Card.Body>
           </Card>
@@ -93,6 +94,7 @@ function HomePage(props) {
 
 
       </CardGroup>
+      <Footer />
     </div>
   );
 }

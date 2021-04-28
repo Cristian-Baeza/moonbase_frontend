@@ -10,6 +10,7 @@ import SignupPage from './pages/SignupPage';
 import Favorites from './components/Favorites';
 import Feed from './components/Feed';
 import News from './components/News';
+import Footer from './components/Footer';
 //API
 import { getLoggedInUser, login } from './api/UserAPI';
 

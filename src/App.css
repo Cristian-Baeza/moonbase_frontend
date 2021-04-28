@@ -71,26 +71,22 @@ body {
 /* ############### FOOTER CSS############################ */
 
 .site-footer {
-  background-image: linear-gradient(to right, #08080a, rgb(169, 16, 216));
-  padding: 20px 0.6rem;
-  color: white;
-  size: 2rem;
-  letter-spacing: 0.3rem;
-  font-weight: 400;
+  background-image: linear-gradient(to right, #08080a, rgb(41, 4, 53));
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-radius: 20px;
   
 }
+.site-footer p{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  color:whitesmoke;
+  padding-left: 10px;
+  margin-bottom: 2px;
+  text-align: center;
+}
 
-.footernumber {
-  color: white;
-  font-size: 20px;
-}
-.footernumber:hover {
-  color: #7d12e0;
-}
-
-.social-logo {
-  margin: 1%;
-}
 
 /* ############### BODY CSS############################ */
 
