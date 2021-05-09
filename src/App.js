@@ -100,7 +100,6 @@ function App() {
     <div>
       <Router>
         <NavBar />
-        {/* <div> */}
         <Route exact path="/" render={renderHomePageLogin} />
         <Route exact path="/" render={renderHomePage} />
         <Route exact path="/login" render={renderLoginPage} />
@@ -108,8 +107,6 @@ function App() {
         <Route exact path='/favorites' component={Favorites} />
         <Route exact path='/feed' component={Feed} />
         <Route exact path='/news' component={News} />
-        {/* </div> */}
-        {/* <Footer /> */}
       </Router>
     </div>
   );

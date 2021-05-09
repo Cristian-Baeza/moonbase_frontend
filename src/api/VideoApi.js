@@ -18,10 +18,3 @@ const fetchVideos = async () => {
 export {
   fetchVideos,
 }
-
-
-// https://api.vimeo.com
-
-
-
-// https://newsapi.org/v2/everything?q="jiujitsu"&apiKey=d536a0e73169448f8c515290d52f4941

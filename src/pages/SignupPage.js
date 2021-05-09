@@ -18,12 +18,10 @@ const SignupPage = (props) => {
     } else {
       history.push('/login');
     }
-
   }
 
   return (
     <div>
-
       <div className='signup-page' style={{ padding: '20px' }}>
         <div className='signup-form'>
           <h3> REGISTER MOONHEAD </h3>
@@ -44,10 +42,6 @@ const SignupPage = (props) => {
           </Form>
         </div>
       </div>
-
-
-
-
     </div>
   );
 };

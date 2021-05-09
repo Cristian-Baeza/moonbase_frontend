@@ -7,9 +7,7 @@ import React from 'react';
 function Footer(props) {
   return (
     <footer className="site-footer">
-
       <p>MOTIVATION HOTLINE: <br />  928-662-0703</p>
-
     </footer>
   );
 }

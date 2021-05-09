@@ -30,7 +30,6 @@ function Favorites(props) {
   }
 
 
-  // EDIT MAPPING ON HOMEPAGE THEN COPY OVER HERE
   const mapVideos = (array) => {
     return (
       array.map((each, index) => {
@@ -38,8 +37,6 @@ function Favorites(props) {
           <Card className='card' style={{ border: '4px solid black' }}>
             <Card.Img src={each.image} alt="Card" />
             <Card.Body>
-              {/* <img width='370' height='209' sizes='(max-width:370px) 100vw, 370px' className="card-img-top" src={each.pictures.sizes[2].link} alt="Card" /> */}
-
               <Card.Title>{each.name}</Card.Title>
               <Card.Text>{each.description}.</Card.Text>
               <a data-fancybox href={`https://player.vimeo.com/video/${each.uri}?autoplay=1&loop=1&byline=0&portrait=0`} className="btn btn-primary">Watch</a>&nbsp;&nbsp;

@@ -37,7 +37,6 @@ const fetchFavorites = async (token) => {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `JWT ${token}`
-        // origin: 'http://localhost:3000/'
       }
     });
     let data = await response.json();

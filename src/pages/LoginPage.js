@@ -6,23 +6,12 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 const Login = ({ isLoggedIn, handleLogout, handleLogin }) => {
 
   if (isLoggedIn) {
-    // return <div>
-    //   <button onClick={handleLogout}>Logout</button>
-    //   <div>
-    //     <Link to='/'>Home</Link>
-    //   </div>
-    // </div>
     return <Redirect to='/' />
 
   }
 
   return (
     <div>
-      {/* <div>
-        <Link to='/'>Home</Link>
-      </div> */}
-
-
       <div className="login-page" style={{ padding: '20px' }}>
         <div className="login-form">
           <h3> Login </h3>
@@ -40,11 +29,6 @@ const Login = ({ isLoggedIn, handleLogout, handleLogin }) => {
           </Form>
         </div>
       </div>
-
-
-
-
-
     </div>
   );
 };

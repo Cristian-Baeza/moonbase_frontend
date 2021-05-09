@@ -10,18 +10,9 @@ function News(props) {
   const fetchArticleInfo = async () => {
     try {
       let response = await fetchArticles();
-      // let arrayOfVideos = 
       if (response) {
-
-        // console.log(response.articles[0].title)
-        // console.log(response.articles[0].description)
-        // console.log(response.articles[0].url)
-        // console.log(response.articles[0].urlToImage)
-
         setArticles(response.articles)
-
-        console.log(articles)
-
+        // console.log(articles)
       } else {
         console.log(response.error.message);
       }

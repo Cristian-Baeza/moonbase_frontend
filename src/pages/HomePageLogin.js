@@ -7,8 +7,6 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
 
     <Navbar className='auth-bar' >
 
-
-
       {
         user &&
         <Link style={{ textDecoration: 'none', color: 'white' }}>
@@ -33,10 +31,7 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
             <Button color='danger' onClick={handleLogout}>LOGOUT</Button>
           </div>
       }
-
-
     </Navbar >
-
   );
 };
 
