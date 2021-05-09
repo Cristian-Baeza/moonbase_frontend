@@ -4,6 +4,12 @@
 Moonbase is a martial art hub for a jiujitsu gym in Salt Lake City, Utah. It contains videos of techniques, most recent fight news, the ability to favorite videos and create your own account.  
 Moonbase allows users to go back and review the lecture covered during class in case they could not attend that day.  Gone are the days where you have to ask your friend to 'record what we did in class today' 
 
+## Demo
+
+Live Website: https://moonbase-slc.com/
+
+Quick demo video: https://vimeo.com/544121730
+
 
 ## FAQ
 
@@ -16,11 +22,6 @@ Backend: Django, Django-JWT, PostgreSql, Heroku
 #### Why?
 
 Moonbase provided me with the opportunity to combine my love for coding with my love for jiujitsu. I was beyond ecstatic to help this gym build this app that would allow all its members (and the world) to have access to jiujitsu
-
-  
-## Demo
-
-Link to demo video: https://vimeo.com/544121730
 
   
 ## Screenshots
@@ -61,6 +62,6 @@ Start the server
   
 ## Authors
 
-- Made with ❤️ by [Cristian Baeza](https://www.github.com/Cristian-Baeza)
+- Made with ❤️     by [Cristian Baeza](https://www.github.com/Cristian-Baeza)
 
   
