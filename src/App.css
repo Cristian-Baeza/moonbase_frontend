@@ -259,4 +259,17 @@ body {
   background-image: url('https://ik.imagekit.io/0jty0e7po/church_state_inside_g9VA_VbW7L.jpg');
   background-size: cover;
   height: 100vh;
+  text-align: center;
+}
+
+.feed-component h1 {
+  font-family: 'Press Start 2P', cursive;
+font-size: 3rem;
+color: white;
+padding-top: 40px;
+}
+
+
+.fb-page{
+
 }

@@ -18,6 +18,17 @@ const signupUser = (userObject) => {
   }).then(res => res)
 };
 
+const login = (userObject) => {
+  return fetch('http://localhost:8000/token-auth/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userObject)
+  }).then(res => res)
+};
+
+
 // get favorites on user account db
 const fetchFavorites = async (token) => {
   try {
@@ -37,15 +48,6 @@ const fetchFavorites = async (token) => {
   }
 }
 
-const login = (userObject) => {
-  return fetch('http://localhost:8000/token-auth/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userObject)
-  }).then(res => res)
-};
 
 
 //post favorites to account http://localhost:8000/core/favorites/
